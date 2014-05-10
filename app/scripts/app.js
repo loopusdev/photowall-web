@@ -20,10 +20,6 @@ angular.module('photowallWebApp', [
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
-      .when('/signup', {
-        templateUrl: 'views/signup.html',
-        controller: 'SignUpCtrl'
-      })
       .when('/manager/:wallName', {
         templateUrl: 'views/wall-manager.html',
         controller: 'ManagerCtrl'
