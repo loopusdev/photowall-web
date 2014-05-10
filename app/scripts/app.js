@@ -13,12 +13,16 @@ angular.module('photowallWebApp', [
         controller: 'HomeCtrl'
       })
       .when('/walls', {
-        templateUrl: 'views/wall-list.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/walls.html',
+        controller: 'WallsCtrl'
       })
       .when('/login', {
         templateUrl: 'views/login.html',
-        controller: 'MainCtrl'
+        controller: 'LoginCtrl'
+      })
+      .when('/signup', {
+        templateUrl: 'views/signup.html',
+        controller: 'SignUpCtrl'
       })
       .when('/manager/:wallName', {
         templateUrl: 'views/wall-manager.html',
