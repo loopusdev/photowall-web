@@ -29,10 +29,8 @@ angular.module('photowallWebApp')
             // Store data
             userData.setEmail(signupData.email);
             userData.setPassword(signupData.password);
-            // Send to list-of-walls screen
-            $location.url('/walls');
-            
-            console.log("signuped and data stored to cookies");
+            // Continue to return route (one from which it came)
+            $location.url(userData.returnRoute);
           },
           // Error
           function(data) {
@@ -41,7 +39,5 @@ angular.module('photowallWebApp')
           }
         );
       };
-
-      console.log("ja sam signup kontroler");
 
 }]);

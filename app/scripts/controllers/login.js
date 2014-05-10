@@ -26,10 +26,8 @@ angular.module('photowallWebApp')
             // Store data
             userData.setEmail(loginData.email);
             userData.setPassword(loginData.password);
-            // Send to list-of-walls screen
-            $location.url('/walls');
-
-            console.log("data stored to cookies");
+            // Continue to return route (one from which it came)
+            $location.url(userData.returnRoute);
           },
           // Error
           function(data) {
@@ -38,7 +36,4 @@ angular.module('photowallWebApp')
           }
         );
       };
-
-      console.log("ja sam login kontroler");
-
 }]);
