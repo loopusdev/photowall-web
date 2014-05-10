@@ -10,17 +10,21 @@ angular.module('photowallWebApp')
 
       // Fetch photos - first 4?
       $scope.wallName = $routeParams.wallName;
-      $scope.photos   = undefined;
+      $scope.photos   = [];
 
       rest.getPhotos($scope.wallName, 
         // Callback
-        function(data) {
-          // Maybe '$apply' is needed
-          $scope.photos = data;
+        function(photosObject) {
+
+          // TODO: do sth with these pics
+          $scope.photos = photosObject.data;
+
+          console.log($scope.photos);
+
         },
         // Error
         function(data) {
-          console.log("Desio se error!");
+          console.log("error: getPhotos()");
         }
       );
 

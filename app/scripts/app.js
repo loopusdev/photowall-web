@@ -31,4 +31,10 @@ angular.module('photowallWebApp', [
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .run([
+      'services.rest', 
+      function(rest) {
+        // Register to socketIO
+        socket.get(rest.baseUrl + "photo", function (response) { console.log (response); });
+  }]);

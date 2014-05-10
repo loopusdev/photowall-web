@@ -7,11 +7,25 @@ angular.module('photowallWebApp')
       var baseUrl = 'http://photowall-backend.herokuapp.com/';
 
       var getPhotos = function(wallName, callback, error) {
-        $http.get(baseUrl + 'wall/' + wallName)
-          .success(function(data) {
-            callback(data);
+        $http.get(baseUrl + 'wall/title/' + wallName)
+          .success(function(wallObject) {
+
+            var id = wallObject.data.id;
+            console.log("dobio id: " + id);
+
+            // Get photos by id
+            $http.get(baseUrl + 'wall/' + id + '/photos')
+              .success(function(photos) {
+                callback(photos); // The "real" callback from controller
+            })
+              .error(function(photos) {
+                error(photos);
+            });
+
+            //callback(data);
           })
           .error(function(data) {
+            console.log('nisam dobio id');
             error(data);
           });
       };
@@ -47,6 +61,7 @@ angular.module('photowallWebApp')
       };
 
       return {
+        baseUrl: baseUrl,
         getPhotos:  getPhotos,
         login:      login,
         signup:     signup,

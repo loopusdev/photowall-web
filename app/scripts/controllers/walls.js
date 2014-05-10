@@ -34,6 +34,4 @@ angular.module('photowallWebApp')
           }
         );
       };
-
-      console.log("ja sam walls controller za: " + $routeParams.wallName);
 }]);
