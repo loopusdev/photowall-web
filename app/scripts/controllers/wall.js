@@ -8,7 +8,8 @@ angular.module('photowallWebApp')
     'services.rest',
     'services.socket',
     '$timeout',
-    function ($scope, $routeParams, rest, socket, $timeout) {
+    '$location',
+    function ($scope, $routeParams, rest, socket, $timeout, $location) {
 
       // Fetch photos - first 4?
       $scope.wallID   = undefined;
@@ -23,23 +24,23 @@ angular.module('photowallWebApp')
         function(wallObject) {
           console.log("dobio wall id: " + wallObject.data.id);
           $scope.wallID = wallObject.data.id;
-        },
-        // Error
-        function(data) {
-          console.log("error: getWallID()");
-        }
-      );
 
-      rest.getPhotos($scope.wallName, 
-        // Callback
-        function(photosObject) {
-          var photos = photosObject.data;
-          $scope.activePhotos =   photos.slice(0, numMaxActivePhotos);
-          $scope.inactivePhotos = photos.slice(numMaxActivePhotos);
+          rest.getPhotos($scope.wallName, 
+            // Callback
+            function(photosObject) {
+              var photos = photosObject.data;
+              $scope.activePhotos =   photos.slice(0, numMaxActivePhotos);
+              $scope.inactivePhotos = photos.slice(numMaxActivePhotos);
+            },
+            // Error
+            function(data) {
+              console.log("error: getPhotos()");
+            });
         },
         // Error
         function(data) {
-          console.log("error: getPhotos()");
+          // Go to home if
+          $location.url('/');
         }
       );
 
