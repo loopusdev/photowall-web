@@ -1,7 +1,13 @@
 
 
-<button>My Walls</button><br/><br/>
-
-<input type="text" ng-model="wallName"> </input>
-
-<button ng-click="openWall()">GO</button>
+<div class="content">
+  <div class="logo"></div>
+  <h1>Photo<span>Wall</span></h1>
+  <button class="vbtn">My Walls</button><br/><br/>
+  
+  <div class="wall-input">
+    <input class="inp" type="text" ng-model="wallName" placeholder="Wall name"> </input>
+    <span class="tag" >#</span>
+    <button class="go" ng-click="openWall()">GO</button>
+  </div>
+</div>

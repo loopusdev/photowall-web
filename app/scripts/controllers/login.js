@@ -46,4 +46,12 @@ angular.module('photowallWebApp')
           }
         );
       };
+
+      $scope.registrationOpened = false;
 }]);
+
+
+$( ".slide" ).click(function() {
+  $( ".login" ).slideUp( "fast", function() {
+  });
+});

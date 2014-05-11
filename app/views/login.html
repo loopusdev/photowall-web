@@ -1,32 +1,29 @@
 
 
-login
-<div>
 
+<div class="content">
+<div class="logo"></div>
+<h1>Photo<span>Wall</span></h1>
+  <div class="login" ng-class="{hide: registrationOpened}">
     <form name="loginForm" novalidate ng-submit="login()">
-        <input type="email" name="email" ng-model="email" placeholder="email" required></input>
-        <input type="password" name="password" ng-model="password" placeholder="password"></input>
-
-        <button type="submit">Submit</button>
-
-        <span>{{errorMsg}}</span>
+      <input class="inp" type="email" name="email" ng-model="email" placeholder="Email" required></input>
+      <input class="inp" type="password" name="password" placeholder="Password" ng-model="password"></input>
+      <button class="vbtn" type="submit">Submit</button>
     </form>
+    <p class="error">{{errorMsg}}</p>
+    <a href="" ng-click="registrationOpened = !registrationOpened">Register</a>  
+  </div>
 
-</div>
-
-<br/> signup
-
-
-<div ng-controller="SignUpCtrl">
-
+  <div ng-controller="SignUpCtrl" class="signup" ng-class="{hide: !registrationOpened}">
+    <h2>Sign up</h2>
     <form name="signupForm" novalidate ng-submit="signup()">
-        <input type="email" name="email" ng-model="email" placeholder="email" required></input>
-        <input type="password" name="password" ng-model="password" placeholder="password"></input>
-        <input type="password" name="passAgain" ng-model="passAgain" placeholder="confirm password"></input>
-
-        <button type="submit">Submit</button>
-
-        <span>{{errorMsg}}</span>
+      <input class="inp" type="email" name="email" ng-model="email" placeholder="Email" required></input>
+      <input class="inp" type="password" name="password" placeholder="Password" ng-model="password"></input>
+      <input class="inp" type="passAgain" name="passAgain" placeholder="Confirm password"></input>
+      <button class="vbtn" type="submit">Submit</button>
     </form>
-
+    <p class="error">{{errorMsg}}</p>
+      
+  </div>
 </div>
+
