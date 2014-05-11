@@ -2,18 +2,31 @@
 
 login
 <div>
-    <input type="text" ng-model="email"></input>
-    <input type="password" ng-model="password"></input>
 
-    <button ng-click="login()">Submit</button>
+    <form name="loginForm" novalidate ng-submit="login()">
+        <input type="email" name="email" ng-model="email" placeholder="email" required></input>
+        <input type="password" name="password" ng-model="password" placeholder="password"></input>
+
+        <button type="submit">Submit</button>
+
+        <span>{{errorMsg}}</span>
+    </form>
+
 </div>
 
 <br/> signup
 
-<div ng-controller="SignUpCtrl">
-    email: <input type="text" ng-model="email"></input><br/><br/>
-    pass: <input type="password" ng-model="password"></input><br/><br/>
-    confirm pass: <input type="password" ng-model="passAgain"></input>
 
-    <button ng-click="signup()">Submit</button>
+<div ng-controller="SignUpCtrl">
+
+    <form name="signupForm" novalidate ng-submit="signup()">
+        <input type="email" name="email" ng-model="email" placeholder="email" required></input>
+        <input type="password" name="password" ng-model="password" placeholder="password"></input>
+        <input type="password" name="passAgain" ng-model="passAgain" placeholder="confirm password"></input>
+
+        <button type="submit">Submit</button>
+
+        <span>{{errorMsg}}</span>
+    </form>
+
 </div>

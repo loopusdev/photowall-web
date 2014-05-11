@@ -15,7 +15,13 @@ angular.module('photowallWebApp')
 
       $scope.signup = function() {
 
-        console.log("pokrenulo se");
+        // Check form
+        if (!$scope.signupForm.$valid) {
+          $scope.errorMsg = "Invalid form";
+          return;
+        } else {
+          $scope.errorMsg = undefined;
+        }
         
         var signupData = {
           email: $scope.email,
@@ -34,8 +40,7 @@ angular.module('photowallWebApp')
           },
           // Error
           function(data) {
-            console.log('error pri loginu!');
-            console.log(data);
+            $scope.errorMsg = "Wrong username/pass";
           }
         );
       };
