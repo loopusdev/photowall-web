@@ -1,0 +1,10 @@
+Ovo je wall list<br/><br/>
+
+<span>{{email}}</span><br/>
+
+<input type="text" ng-model="wallName"></input>
+<button ng-click="createWall()">Create wall</button>
+
+<div ng-repeat="wall in walls">
+    {{wall.title}}
+</div>

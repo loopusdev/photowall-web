@@ -1,0 +1,8 @@
+node_modules
+dist
+.tmp
+.idea
+.sass-cache
+*.swp
+app/bower_components
+/docs

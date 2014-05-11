@@ -1,0 +1,17 @@
+
+
+<div class="content">
+  <div class="logo"></div>
+  <h1>Photo<span>Wall</span></h1>
+  <button class="vbtn" ng-click="openMyWalls()">My Walls</button><br/><br/>
+  
+  <div class="wall-input">
+  	<form name="wallNameForm" novalidate ng-submit="openWall()">
+  		<input class="inp" type="text" name="wallName" ng-model="wallName" placeholder="Wall name" required ng-pattern="/^[a-zA-Z0-9-]*$/"> </input>
+  		<span class="tag" >#</span>
+  		<button class="go" type="submit">GO</button>
+  	</form>
+  </div>
+
+  <span ng-show="error">{{error}}</span>
+</div>
