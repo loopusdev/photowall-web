@@ -40,8 +40,10 @@ angular.module('photowallWebApp')
 
         rest.createWall(wallData, 
           // Callback
-          function(data) {
+          function(wall) {
             console.log("wall created!");
+            console.log(wall);
+            $scope.walls.push(wall);
           },
           // Error
           function(data) {
