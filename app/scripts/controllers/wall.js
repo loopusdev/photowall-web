@@ -17,7 +17,7 @@ angular.module('photowallWebApp')
       $scope.wallName = $routeParams.wallName;
       $scope.activePhotos = []; // Photos that are shown on wall
       $scope.inactivePhotos = []; // Photos not shown on wall
-      var numMaxActivePhotos = 40; // Maximal number of active photos
+      var numMaxActivePhotos = 100; // Maximal number of active photos
 
       rest.getWall($scope.wallName,
         // Callback

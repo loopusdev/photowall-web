@@ -297,6 +297,7 @@ outline: none !important;
 
 
 .nbar {
+    position: relative;
     width: 100%;
     background-color: #ff993f;
     position: fixed;
@@ -306,7 +307,23 @@ outline: none !important;
     color: #fff;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.20);
 }
+.nbar span {
+    font-weight: 300;
+    font-size: 16px;
+    text-align: center;
+}
+.logout {
+    font-size: 16px;
+    position: absolute;
+    left: 30px;
+    cursor: pointer;
+    // float: left;
+    // margin-left: 30px;
+}
 
+.logout:hover{
+    text-decoration: underline;
+}
 
 .walls {
     padding: 70px 30px 0;
