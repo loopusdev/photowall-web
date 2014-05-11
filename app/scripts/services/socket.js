@@ -10,13 +10,13 @@ angular.module('photowallWebApp')
         if (typeof console !== 'undefined') {
           console.log.apply(console, arguments);
         }
-      }
+      };
 
       // as soon as this file is loaded, connect automatically, 
       var socket = $window.io.connect('http://photowall-backend.herokuapp.com:80');
       if (typeof console !== 'undefined') {
         log('Connecting to Sails.js...');
-      }
+      };
 
       socket.on('connect', function socketConnected() {
 

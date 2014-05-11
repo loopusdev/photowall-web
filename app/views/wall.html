@@ -2,10 +2,10 @@
 
 Ovo je prikaz za wall: {{wallName}}
 
-<div ng-repeat="photo in photos">
-
-    <img ng-src="{{photo.url}}" width="350">
-    
+<div masonry="{gutter: 5, transitionDuration: '0.4s'}">
+    <div class="masonry-brick" ng-repeat="photo in photos">
+        <img ng-src="{{photo.url}}">
+    </div>
 </div>
 
 <!-- use photosToShow -->

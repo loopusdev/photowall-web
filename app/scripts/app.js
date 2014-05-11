@@ -4,7 +4,8 @@ angular.module('photowallWebApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'wu.masonry'
 ])
   .config(function ($routeProvider) {
     $routeProvider

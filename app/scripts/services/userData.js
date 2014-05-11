@@ -21,6 +21,12 @@ angular.module('photowallWebApp')
         return $cookies.password;
       };
       
+      var logout = function() {
+        // Reset cookies
+        $cookies.email    = undefined;
+        $cookies.password = undefined;
+      };
+      
       var isLoggedInCache = null;
       /**
        * @param callback (fun(loginStatus)) Function that takes true if user is logged in, otherwise false.
@@ -50,6 +56,7 @@ angular.module('photowallWebApp')
         getPassword: getPassword,
 
         isLoggedIn: isLoggedIn,
+        logout: logout,
 
         // Route to which user will go after successful login
         returnRoute: '/'
