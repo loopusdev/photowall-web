@@ -36,6 +36,7 @@ angular.module('photowallWebApp')
             userData.setUserId(response.data.id);
             userData.setEmail(loginData.email);
             userData.setPassword(loginData.password);
+            userData.setLoginCache(true);
             // Continue to return route (one from which it came)
             $location.url(userData.returnRoute);
           },

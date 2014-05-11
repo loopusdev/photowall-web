@@ -19,7 +19,7 @@
     <form name="signupForm" novalidate ng-submit="signup()">
       <input class="inp" type="email" name="email" ng-model="email" placeholder="Email" required></input>
       <input class="inp" type="password" name="password" placeholder="Password" ng-model="password"></input>
-      <input class="inp" type="passAgain" name="passAgain" placeholder="Confirm password"></input>
+      <input class="inp" type="password" name="passAgain" placeholder="Confirm password"></input>
       <button class="vbtn" type="submit">Submit</button>
     </form>
     <p class="error">{{errorMsg}}</p>

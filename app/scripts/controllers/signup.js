@@ -33,10 +33,12 @@ angular.module('photowallWebApp')
           function(response) {
             console.log(response);
             // Store data
-            userData.setUserId(response.data.id);
+            userData.setUserId(response.id);
             userData.setEmail(signupData.email);
             userData.setPassword(signupData.password);
+            userData.setLoginCache(true);
             // Continue to return route (one from which it came)
+            console.log(userData.returnRoute);
             $location.url(userData.returnRoute);
           },
           // Error

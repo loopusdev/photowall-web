@@ -54,6 +54,10 @@ angular.module('photowallWebApp')
         }
       };
 
+      var setLoginCache = function(value) {
+        isLoggedInCache = value;
+      };
+
       return {
         setEmail: setEmail,
         getEmail: getEmail,
@@ -68,7 +72,9 @@ angular.module('photowallWebApp')
         logout: logout,
 
         // Route to which user will go after successful login
-        returnRoute: '/'
+        returnRoute: '/',
+
+        setLoginCache: setLoginCache,
       };
 
     }]);
