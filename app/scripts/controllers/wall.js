@@ -49,7 +49,9 @@ angular.module('photowallWebApp')
           // Check id - if matches, push to photos array
           if (msg.data.wallId === $scope.wallID) {
             // move one from active to inactive photos and push new to active
-            $scope.inactivePhotos.push($scope.activePhotos.pop());
+            if ($scope.activePhotos.length >= numMaxActivePhotos) {
+              $scope.inactivePhotos.push($scope.activePhotos.pop());
+            }
             $scope.activePhotos.unshift(msg.data);
           }    
 
