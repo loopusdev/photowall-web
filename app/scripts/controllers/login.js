@@ -11,7 +11,6 @@ angular.module('photowallWebApp')
 
       $scope.email    = undefined;
       $scope.password = undefined;
-
       $scope.errorMsg = undefined;
 
       $scope.login = function() {
@@ -24,7 +23,6 @@ angular.module('photowallWebApp')
           $scope.errorMsg = undefined;
         }
         
-
         var loginData = {
           email: $scope.email,
           password: $scope.password
@@ -33,6 +31,7 @@ angular.module('photowallWebApp')
         rest.login(loginData, 
           // Callback
           function(response) {
+            console.log(response);
             // Store data
             userData.setUserId(response.data.id);
             userData.setEmail(loginData.email);

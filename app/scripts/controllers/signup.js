@@ -30,7 +30,7 @@ angular.module('photowallWebApp')
 
         rest.signup(signupData, 
           // Callback
-          function(data) {
+          function(response) {
             console.log(response);
             // Store data
             userData.setUserId(response.data.id);
