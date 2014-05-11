@@ -22,7 +22,6 @@ angular.module('photowallWebApp')
 
         // Listen for Comet messages from Sails
         socket.on('message', function messageReceived(message) {
-          log('New comet message received :: ', message);
           // Execute all listeners
           angular.forEach(listeners, function(listener) {
             listener(message);
