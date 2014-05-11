@@ -49,8 +49,8 @@ angular.module('photowallWebApp')
           // Check id - if matches, push to photos array
           if (msg.data.wallId === $scope.wallID) {
             // move one from active to inactive photos and push new to active
-            $scope.inactivePhotos.push($scope.activePhotos[0]);
-            $scope.activePhotos[0] = msg.data;
+            $scope.inactivePhotos.push($scope.activePhotos.pop());
+            $scope.activePhotos.unshift(msg.data);
           }    
 
         });
@@ -72,6 +72,6 @@ angular.module('photowallWebApp')
         }, 3000);
       };
 
-      swapRandomPhoto();
+      //swapRandomPhoto();  // TODO: fix problem with new picture not appearing on first
 
 }]);
