@@ -36,6 +36,16 @@ angular.module('photowallWebApp')
           });
       };
 
+      var getWalls = function(callback, error) {
+        $http.get(baseUrl + 'wall/')
+          .success(function(data) {
+            callback(data);
+          })
+          .error(function(data) {
+            error(data);
+          });
+      };
+
       var login = function(userData, callback, error) {
         $http.post(baseUrl + 'user/login/', userData)
           .success(function(data) {
@@ -73,6 +83,7 @@ angular.module('photowallWebApp')
         signup:     signup,
         createWall: createWall,
         getWall:    getWall,
+        getWalls:   getWalls,
       };
 
     }]);

@@ -5,7 +5,13 @@ angular.module('photowallWebApp')
     'services.rest',
     function($cookies, rest) {
 
-      // Setters
+      var setUserId = function(id) {
+        $cookies.userId = id;
+      };
+      var getUserId = function() {
+        return $cookies.userId;
+      };
+
       var setEmail = function(email) {
         $cookies.email = email;
       };
@@ -13,7 +19,6 @@ angular.module('photowallWebApp')
         $cookies.password = password;
       };
 
-      // Getters
       var getEmail = function() {
         return $cookies.email;
       };
@@ -23,6 +28,7 @@ angular.module('photowallWebApp')
       
       var logout = function() {
         // Reset cookies
+        $cookies.id       = undefined;
         $cookies.email    = undefined;
         $cookies.password = undefined;
       };
@@ -51,6 +57,9 @@ angular.module('photowallWebApp')
       return {
         setEmail: setEmail,
         getEmail: getEmail,
+
+        setUserId: setUserId,
+        getUserId: getUserId,
 
         setPassword: setPassword,
         getPassword: getPassword,

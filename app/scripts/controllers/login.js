@@ -32,16 +32,16 @@ angular.module('photowallWebApp')
 
         rest.login(loginData, 
           // Callback
-          function(data) {
-            console.log(data);
+          function(response) {
             // Store data
+            userData.setUserId(response.data.id);
             userData.setEmail(loginData.email);
             userData.setPassword(loginData.password);
             // Continue to return route (one from which it came)
             $location.url(userData.returnRoute);
           },
           // Error
-          function(data) {
+          function(response) {
             $scope.errorMsg = "Wrong username/pass";
           }
         );

@@ -4,3 +4,7 @@ Ovo je wall list<br/><br/>
 
 <input type="text" ng-model="wallName"></input>
 <button ng-click="createWall()">Create wall</button>
+
+<div ng-repeat="wall in walls">
+    {{wall.title}}
+</div>
