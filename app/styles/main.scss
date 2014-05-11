@@ -2,6 +2,26 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
 
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -259,14 +279,20 @@ outline: none !important;
 }
 
 
-.wall-name {
+.header {
     font-size: 50px;
     font-weight: 600;
     color: #ff993f;
+    border: 0px;
 }
 
+.num-photos {
+    float: right;
+}
 
-
+.wall-name {
+    float:left;
+}
 
 // /* Responsive: Portrait tablets and up */
 // @media screen and (min-width: 768px) {

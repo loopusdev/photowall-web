@@ -1,14 +1,13 @@
 
 <div class="black">
-  <div class="wall-name">
-    <p>#{{wallName}}</p>
+  <div class="header cf">
+    <p class="wall-name">#{{wallName}}</p>
+    <p class="num-photos">{{activePhotos.length + inactivePhotos.length}} photos</p>
   </div>
   
   
   <div masonry="{transitionDuration: '0.4s', columnWidth: 5}">
-  
-  
-      <div class="masonry-brick" ng-repeat="photo in photos">
+      <div class="masonry-brick" ng-repeat="photo in activePhotos">
           <img ng-src="{{photo.url}}">
       </div>
   </div>
