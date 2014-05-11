@@ -15,6 +15,13 @@ angular.module('photowallWebApp')
       $scope.wallName = undefined;
       $scope.walls    = [];
 
+      $scope.loggedIn = false; //TODO
+      //UX - do not show /walls if notLoggedIn
+      userData.isLoggedIn(function(loggedIn) {
+        $scope.loggedIn = loggedIn;
+      });
+
+
     rest.getWalls(
       // Callback
       function(walls) {
@@ -30,6 +37,8 @@ angular.module('photowallWebApp')
         console.log('error: getWalls');
       });
 
+
+
     $scope.logout = function() {
         userData.logout();
       };
@@ -42,7 +51,7 @@ angular.module('photowallWebApp')
         };
         console.log(wallData);
 
-        rest.createWall(wallData, 
+        rest.createWall(wallData,
           // Callback
           function(wall) {
             console.log("wall created!");

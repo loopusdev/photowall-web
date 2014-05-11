@@ -1,17 +1,25 @@
-<div class="nbar">
-  <span>{{email}}</span>
-  <fig class="logout" ng-click="logout()">Logout</fig>
+<div ng-show="loggedIn" >
+  <div class="nbar">
+    <span>{{email}}</span>
+    <fig class="logout" ng-click="logout()">Logout</fig>
+  </div>
+
+  <div class="walls">
+    <div class="nwall">
+      <input class="inp" type="text" ng-model="wallName" placeholder="Wall name"></input>
+      <span class="tag" >#</span>
+      <button class="go" ng-click="createWall()">Create wall</button>
+    </div>
+
+    <div class="wall-list">
+      <h2>My Walls</h2>
+      <a class="wall" ng-href="#/wall/{{wall.title}}" ng-repeat="wall in walls">#{{wall.title}}</a>
+    </div>
+  </div>
 </div>
 
-<div class="walls">
-  <div class="nwall">
-    <input class="inp" type="text" ng-model="wallName" placeholder="Wall name"></input>
-    <span class="tag" >#</span>
-    <button class="go" ng-click="createWall()">Create wall</button>
-  </div>
-  
-  <div class="wall-list">
-    <h2>My Walls</h2>
-    <a class="wall" ng-href="#/wall/{{wall.title}}" ng-repeat="wall in walls">#{{wall.title}}</a>
+<div ng-hide="loggedIn" >
+  <div class="nbar">
+    <span>You are not logged in, you will be redirected to the authorization form!</span>
   </div>
 </div>
