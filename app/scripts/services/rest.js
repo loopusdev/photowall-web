@@ -72,7 +72,7 @@ angular.module('photowallWebApp')
         login:      login,
         signup:     signup,
         createWall: createWall,
-        getWall: getWall,
+        getWall:    getWall,
       };
 
     }]);
