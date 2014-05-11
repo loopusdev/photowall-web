@@ -20,8 +20,6 @@ angular.module('photowallWebApp')
           // TODO: do sth with these pics
           $scope.photos = photosObject.data;
 
-          console.log($scope.photos);
-
         },
         // Error
         function(data) {
