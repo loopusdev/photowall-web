@@ -131,7 +131,7 @@ a, a:hover {
     border: 1px solid #ef8120;
     padding: 10px;
     color: #fff;
-    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.203);
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.20);
 
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -293,6 +293,58 @@ outline: none !important;
 .wall-name {
     float:left;
 }
+
+
+
+.nbar {
+    width: 100%;
+    background-color: #ff993f;
+    position: fixed;
+    top: 0;
+    padding: 12px ;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.20);
+}
+
+
+.walls {
+    padding: 70px 30px 0;
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+   
+}
+
+.walls h2 {
+    font-family: 'Signika', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: #555;
+    letter-spacing: -1px;
+}
+
+.wall {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff993f;
+    padding-bottom: 10px;
+}
+.wall:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.nwall {
+    position: relative;
+}
+
+
+.wall-list{
+    padding-top: 10px;
+}
+
 
 // /* Responsive: Portrait tablets and up */
 // @media screen and (min-width: 768px) {

@@ -1,10 +1,17 @@
-Ovo je wall list<br/><br/>
+<div class="nbar">
+  <span>{{email}}</span>
+  <button ng-click="logout()">Logout</button>
+</div>
 
-<span>{{email}}</span><br/>
-
-<input type="text" ng-model="wallName"></input>
-<button ng-click="createWall()">Create wall</button>
-
-<div ng-repeat="wall in walls">
-    {{wall.title}}
+<div class="walls">
+  <div class="nwall">
+    <input class="inp" type="text" ng-model="wallName" placeholder="Wall name"></input>
+    <span class="tag" >#</span>
+    <button class="go" ng-click="createWall()">Create wall</button>
+  </div>
+  
+  <div class="wall-list">
+    <h2>My Walls</h2>
+    <a class="wall" ng-href="#/wall/{{wall.title}}" ng-repeat="wall in walls">#{{wall.title}}</a>
+  </div>
 </div>

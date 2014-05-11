@@ -3,7 +3,8 @@ angular.module('photowallWebApp')
   .factory('services.userData', [
     '$cookies',
     'services.rest',
-    function($cookies, rest) {
+    '$location',
+    function($cookies, rest, $location) {
 
       var setUserId = function(id) {
         $cookies.userId = id;
@@ -31,6 +32,8 @@ angular.module('photowallWebApp')
         $cookies.id       = undefined;
         $cookies.email    = undefined;
         $cookies.password = undefined;
+        isLoggedInCache = false;
+        $location.url('/');
       };
       
       var isLoggedInCache = null;

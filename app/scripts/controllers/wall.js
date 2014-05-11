@@ -7,9 +7,10 @@ angular.module('photowallWebApp')
     '$routeParams',
     'services.rest',
     'services.socket',
+    'services.userData',
     '$timeout',
     '$location',
-    function ($scope, $routeParams, rest, socket, $timeout, $location) {
+    function ($scope, $routeParams, rest, socket, userData, $timeout, $location) {
 
       // Fetch photos - first 4?
       $scope.wallID   = undefined;
@@ -17,7 +18,6 @@ angular.module('photowallWebApp')
       $scope.activePhotos = []; // Photos that are shown on wall
       $scope.inactivePhotos = []; // Photos not shown on wall
       var numMaxActivePhotos = 40; // Maximal number of active photos
-
 
       rest.getWall($scope.wallName,
         // Callback

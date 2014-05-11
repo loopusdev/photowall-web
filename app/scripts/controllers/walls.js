@@ -30,6 +30,10 @@ angular.module('photowallWebApp')
         console.log('error: getWalls');
       });
 
+    $scope.logout = function() {
+        userData.logout();
+      };
+
       // Called when button clicked
       $scope.createWall = function() {
         var wallData = {
