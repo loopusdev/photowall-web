@@ -39,9 +39,7 @@ angular.module('photowallWebApp', [
     '$location',
     'services.rest',
     function($rootScope, userData, $location, rest) {
-      // Register to socketIO
-      socket.get(rest.baseUrl + "photo", function (response) { console.log (response); });
-        
+
       $rootScope.$on('$locationChangeStart', function(event, next, current) {
         // If user should be logged in, send him to login
         var urlNext = next.split('#')[1];

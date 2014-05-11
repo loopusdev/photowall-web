@@ -6,7 +6,8 @@ angular.module('photowallWebApp')
     '$scope',
     '$routeParams',
     'services.rest',
-    function ($scope, $routeParams, rest) {
+    'services.socket',
+    function ($scope, $routeParams, rest, socket) {
 
       // Fetch photos - first 4?
       $scope.wallName = $routeParams.wallName;
@@ -28,11 +29,15 @@ angular.module('photowallWebApp')
         }
       );
 
+      socket.registerListener(function(msg) {
+        $scope.$apply(function() {
+          $scope.photos.push(msg.data);          
+        });
+      });
+
       /*
       // Final resulst
       $scope.photosToShow = undefined;
       */
-
-      console.log("ja sam wall controller za: " + $routeParams.wallName);
 
 }]);
