@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PhotoWall - App INFO</title>
+    <style>
+      ::-moz-selection {
+        background: #b3d4fc;
+        text-shadow: none;
+      }
+
+      ::selection {
+        background: #b3d4fc;
+        text-shadow: none;
+      }
+
+      html {
+        padding: 30px 10px;
+        font-size: 20px;
+        line-height: 1.4;
+        color: #737373;
+        background: #f0f0f0;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+
+      html,
+      input {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      body {
+        max-width: 920px;
+        _width: 920px;
+        padding: 30px 20px 50px;
+        border: 1px solid #b3b3b3;
+        border-radius: 4px;
+        margin: 0 auto;
+        box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+        background: #fcfcfc;
+      }
+
+      h1 {
+        margin: 0 10px;
+        font-size: 50px;
+        text-align: center;
+      }
+
+      h1 span {
+        color: #bbb;
+      }
+
+      h3 {
+        margin: 1.5em 0 0.5em;
+      }
+
+      p {
+        margin: 1em 0;
+      }
+
+      ul {
+        padding: 0 0 0 40px;
+        margin: 1em 0;
+      }
+
+      a {
+        color: red;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 910px;
+        _width: 910px;
+        margin: 0 auto;
+
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Photo<span>Wall</span> <span style="font-weight:lighter; font-size:24px;">Alpha v0.1</span></h1>
+      <p>Display you photos in realtime on wall (TV, projector or on any screen with browser inside).</p>
+      <p style="color:red;">* App is currently in public Alpha testing mode! Any data (photos, wall and user info) can be deleted without notification!</p>
+
+      <p>Planed release date for production v1.0 is 1<sup>st</sup> of January 2015</p>
+
+      <p>For testing is recommended using Google Chrome and iOS 7, know issues: Firefox - problem with pushing new photos over sockets, Android - app crashes after using camera</p>
+
+
+      <p><b>How to test</b></p>
+      <ol>
+        <li>
+          Use Google Chrome browser
+          <ol>
+            <li>Create wall at <a href="http://photowall.loopus.co" target="_blank">photowall.loopus.co</a></li>
+            <li>Open wall (in fullscreen)</li>
+          </ol>
+        </li>
+
+        <li>
+          Download AppGyver Scanner native app
+          <ul>
+            <li>
+              <a href="https://itunes.apple.com/us/app/appgyver-scanner/id575076515?mt=8" target="_blank">iOS</a>
+            </li>
+            <li>
+              <a href="https://play.google.com/store/apps/details?id=com.appgyver.android" target="_blank">Android</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          PhotoWall mobile app are published at
+          <a href="http://x.appgyver.com/21878/110" target="_blank">AppGyver X</a>
+          <ul>
+            <li>
+              With AppGyver Scanner scan QR code to open app from AppGyver SHARE:
+              <br>
+              <a href="https://share.appgyver.com/?id=11940&hash=c36c016ba88ce73aa1b16f3aca24891be80dd3629572355336ac0f3172ed81fe" target="_blank">https://share.appgyver.com/?id=11940&hash=c36c016ba88ce73aa1b16f3aca24891be80dd3629572355336ac0f3172ed81fe</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          Take photo with mobile app!
+        </li>
+
+        <li>
+          Photos are dinamicaly pushed to wall opened in Google Chrome
+        </li>
+
+      </ol>
+
+
+
+
+      <p><b>App enviroments</b></p>
+      <ul>
+        <li>
+          Production
+          <br>
+          <a href="http://photowall.loopus.co" target="_blank">photowall.loopus.co</a>
+        </li>
+        <li>
+          Staging
+          <br>
+          <a href="http://staging.photowall.loopus.co" target="_blank">staging.photowall.loopus.co</a>
+        </li>
+        <li>
+          QA
+          <br>
+          <a href="http://qa.photowall.loopus.co" target="_blank">qa.photowall.loopus.co</a>
+        </li>
+        <li>
+          Development
+          <br>
+          <a href="http://dev.photowall.loopus.co" target="_blank">dev.photowall.loopus.co</a>
+        </li>
+      </ul>
+
+      <p><b>App repos</b></p>
+      <ul>
+        <li>
+          Web - powered by <a href="https://angularjs.org/" target="_blank">AngularJS</a>
+          <br>
+          <a href="https://github.com/loopusdev/photowall-web" target="_blank">github.com/loopusdev/photowall-web</a>
+        </li>
+        <li>
+          Mobile - powered by <a href="http://www.appgyver.com/" target="_blank">Steroids.js</a>
+          <br>
+          <a href="https://github.com/loopusdev/photowall-mobile" target="_blank">github.com/loopusdev/photowall-mobile</a>
+        </li>
+        <li>
+          Backend - powered by <a href="http://sailsjs.org" target="_blank">Sails.js</a>
+          <br>
+          <a href="https://github.com/loopusdev/photowall-backend" target="_blank">github.com/loopusdev/photowall-backend</a>
+        </li>
+      </ul>
+
+    </div>
+  </body>
+</html>
